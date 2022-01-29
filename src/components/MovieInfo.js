@@ -3,8 +3,22 @@ import { Card, Button } from 'react-bootstrap';
 
 const MovieInfo = (props) =>{
    let movieLibrary = props.movie.Search;
+   const [favorites, setFavorites ] = useState([
+      { title: 'Reality Bites' },
+      { title: 'Little Women' },
+      { title: 'Breaking Away' }
+       
+   ]);
 
-    
+const handleButtonClick = (event) => {
+    const newItem = {
+        title: event.target.value
+    };
+
+    const newItems =  [...favorites, newItem ];
+    setFavorites(newItems);
+};
+    console.log(favorites);
     return(
         <>
             <div className="movie__library">
@@ -17,7 +31,7 @@ const MovieInfo = (props) =>{
                                     Year: {item.Year} <br />
                                     Type: {item.Type}
                                     </Card.Text>
-                                    <Button variant="secondary">Add to Watch List</Button>
+                                    <Button variant="secondary" value={item.Title} onClick={handleButtonClick}>Add to Watch List</Button>
                                 </Card.Body>
                         </Card>;
             
