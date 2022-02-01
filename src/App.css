@@ -9,6 +9,9 @@
   
   
 }
+.content__container{
+  
+}
 h1{
   font-family: 'Bree Serif', serif;
   color: black;
@@ -24,6 +27,13 @@ h2, h3, h4, p{
   color: black;
   font-weight: bolder;
 }
+.main__container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: goldenrod;
+  padding: 1em;
+}
 
 .movie__library{
   display: flex;
@@ -31,9 +41,19 @@ h2, h3, h4, p{
   flex-wrap: wrap;
   justify-content: flex-start;
   background-color: goldenrod;
+  border: 3px solid black;
+  width: 70%;
 }
 .movie__card{
   margin: .5em;
 }
 
+.favorites{
+  background-color: hotpink;
+  padding-left: 50px;
+}
+.favorite__list{
+  border: 3px solid hotpink;
+  width: 30%;
+}
 

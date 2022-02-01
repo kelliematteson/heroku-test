@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './App.css';
 import Layout from './layouts/Layout';
 import MovieInfo from './components/MovieInfo';
-import background from './images/cinemaBackground.jpg';
+
 
 
 function App(props) {
@@ -41,7 +41,7 @@ function App(props) {
       }
     })();
   }, [query]);
- 
+ console.log(movie);
   const handleChange = event => {
     updateQuery({ ...query, ...{ [event.target.id]: event.target.value} });
   }
@@ -58,7 +58,7 @@ function App(props) {
   
   return (
     <div className="App">  
-                <Layout>
+              <Layout>
                   <div>
                   <h1>Find that Movie</h1>
                   </div>
@@ -82,11 +82,13 @@ function App(props) {
                   <Button variant="primary" size="lg" type="submit" value="Find Movie Info">Find that Movie</Button>
                   </form>
                   </div>
+                  <div className="main__container">
             {
               Object.keys(movie).length ? 
                 <MovieInfo movie={movie} />
             : ''
             }
+            </div>
             </Layout>
     </div>
     

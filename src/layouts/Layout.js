@@ -9,7 +9,7 @@ export default function Layout(props){
 
 
     return (
-        <div>
+        <div className="content__container">
            
             {props.children}
             

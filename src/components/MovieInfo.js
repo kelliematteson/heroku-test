@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import FavoriteList from '../components/FavoriteList';
 
 const MovieInfo = (props) =>{
    let movieLibrary = props.movie.Search;
    const [favorites, setFavorites ] = useState([
-      { title: 'Reality Bites' },
-      { title: 'Little Women' },
-      { title: 'Breaking Away' }
-       
+       {title: 'Reality Bites'},
+       {title: 'Encanto'},
+       {title: 'Sleepless in Seattle'}
    ]);
 
 const handleButtonClick = (event) => {
     const newItem = {
-        title: event.target.value
+        title: event.target.value,
     };
 
     const newItems =  [...favorites, newItem ];
     setFavorites(newItems);
 };
-    console.log(favorites);
+ 
     return(
         <>
             <div className="movie__library">
@@ -36,6 +36,12 @@ const handleButtonClick = (event) => {
                         </Card>;
             
         })}
+        </div>
+        <div className="favorite__list">
+        { Object.keys(favorites).length ? 
+            <FavoriteList favorites={favorites}/>
+        : ''
+        }
         </div>
     </>
     )
