@@ -10,7 +10,7 @@ import MovieInfo from './components/MovieInfo';
 function App(props) {
   const [query, updateQuery ] = useState({
     baseURL: 'http://www.omdbapi.com?',
-    apiKey: 'apikey=' + '8d432cb5',
+    apiKey: 'apikey=' + process.env.API_KEY,
     option: '&s=',
     title: '',
     optionYear: '&y=',
